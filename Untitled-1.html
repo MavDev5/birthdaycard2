@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Letter for You</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scene">
+        <div class="teddy-container" id="teddyBox">
+            <div class="teddy">
+                <div class="ears"></div>
+                <div class="face">
+                    <div class="eyes"></div>
+                    <div class="nose"></div>
+                </div>
+                <div class="arms"></div>
+            </div>
+            
+            <div class="envelope" onclick="openLetter()">
+                <div class="flap"></div>
+                <div class="letter-text">Click to Open 💌</div>
+            </div>
+        </div>
+
+        <div class="book-content" id="bookContent">
+            <button class="close-btn" onclick="closeLetter()">✕ Close</button>
+            
+            <section class="page active" id="p1">
+                <h2>Counting down to your day...</h2>
+                <div class="timer">
+                    <div><span id="d">00</span><p>Days</p></div>
+                    <div><span id="h">00</span><p>Hrs</p></div>
+                    <div><span id="m">00</span><p>Min</p></div>
+                    <div><span id="s">00</span><p>Sec</p></div>
+                </div>
+                <button class="next-btn" onclick="showPage(2)">Next Page →</button>
+            </section>
+
+            <section class="page" id="p2">
+                <img src="https://via.placeholder.com/200" class="polaroid" alt="Us">
+                <p>"Every moment with you is a treasure."</p>
+                <button class="next-btn" onclick="showPage(3)">Next →</button>
+            </section>
+
+            <section class="page" id="p3">
+                <img src="https://via.placeholder.com/200" class="polaroid" alt="You">
+                <p>"You're the prettiest girl in the world."</p>
+                <button class="next-btn" onclick="showPage(4)">Last One →</button>
+            </section>
+
+            <section class="page" id="p4">
+                <h1 class="bday-wish">Happy Birthday! 🎂</h1>
+                <p>I love you more than words can say. Let's make this year amazing!</p>
+                <p>❤️ Forever Yours</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

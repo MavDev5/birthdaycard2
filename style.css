@@ -1,0 +1,130 @@
+:root {
+    --teddy-color: #b07d62;
+    --paper-color: #fff9ed;
+    --accent: #ff4d6d;
+}
+
+body {
+    background-color: #ffe5ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive;
+    overflow: hidden;
+}
+
+/* Teddy Bear Styling */
+.teddy-container {
+    position: relative;
+    text-align: center;
+    transition: all 0.8s ease;
+}
+
+.teddy {
+    width: 200px;
+    height: 180px;
+    background: var(--teddy-color);
+    border-radius: 50% 50% 45% 45%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.ears::before, .ears::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: var(--teddy-color);
+    border-radius: 50%;
+    top: -10px;
+}
+.ears::before { left: -10px; }
+.ears::after { right: -10px; }
+
+.face .eyes::before, .face .eyes::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #333;
+    border-radius: 50%;
+    top: 70px;
+}
+.face .eyes::before { left: 60px; }
+.face .eyes::after { right: 60px; }
+
+.nose {
+    width: 30px;
+    height: 20px;
+    background: #4a3328;
+    border-radius: 50%;
+    position: absolute;
+    top: 100px;
+    left: 85px;
+}
+
+/* Envelope */
+.envelope {
+    width: 180px;
+    height: 120px;
+    background: #fff;
+    border: 2px solid #ddd;
+    margin-top: -50px;
+    position: relative;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Book Content Pop-out */
+.book-content {
+    display: none;
+    position: absolute;
+    width: 320px;
+    height: 450px;
+    background: var(--paper-color);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    padding: 20px;
+    z-index: 100;
+    transform: scale(0);
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.book-content.open {
+    display: block;
+    transform: scale(1);
+}
+
+/* Pages Logic */
+.page { display: none; text-align: center; }
+.page.active { display: block; animation: fadeIn 0.5s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.polaroid {
+    width: 80%;
+    border: 10px solid white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.timer { display: flex; justify-content: space-around; margin: 20px 0; }
+.timer span { display: block; font-size: 1.5rem; color: var(--accent); font-weight: bold; }
+
+.next-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
